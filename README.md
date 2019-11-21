@@ -5,20 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+_はーいここからデータベースの設計ですよ〜〜〜ん！_
+# Users テーブル
+｜name｜e-mail｜
 
-* System dependencies
+# Association
+** has many messages
+** has many groups through groups_users
 
-* Configuration
+# groups_usersテーブル
 
-* Database creation
+|Column|Type|Options|
 
-* Database initialization
+# Association
+： belongs_to :group
+：belongs_to :user
 
-* How to run the test suite
+# groups テーブル
+|group_name|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Association
+* has many users through groups_users
+* belongs_to messages
